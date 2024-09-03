@@ -1,3 +1,5 @@
+//NOTE: JS is a dynamically types language as we not need to define the type of variables while defining them
+
 var name = 'Pawan Kumar'; // global variable
 var age = 27; // global variable
 let city='Bareilly';
