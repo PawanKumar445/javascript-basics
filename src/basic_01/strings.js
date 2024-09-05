@@ -11,6 +11,11 @@ const str = new String('Hi');
   console.log("String comparison", "AA" > "aa");//false
 
   console.log('ASCII VALUE:::', 'Aa'.charCodeAt(0));
+
+  console.log('Local COMPARE:', 'AA'.localeCompare('aa'));
+  console.log("Local COMPARE CASE INSENSITIVE:", "AA".localeCompare("aa",undefined,{sensitivity:'base'}));
+
+  
   
 
 
