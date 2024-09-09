@@ -11,7 +11,6 @@
 * How data is saved in memory and how it is accessed, on the basis of this data is categorized. `Primitive Types` and `Non Primitive Types`
   * Primitive: CALL BY VALUE
   * Non Primitive: CALL BY REFERENCE
- * 
  * Primitive Types: String, Number, Boolean, null, undefined, Symbol, BigInt
  *    NOTE: They all holds single value at a time
  * Non Primitive / Reference Types: Array, Objects, Functions
