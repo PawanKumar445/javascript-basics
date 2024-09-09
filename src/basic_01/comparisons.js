@@ -9,7 +9,7 @@ console.log('strict comparison:',2!== '2' );
 
 console.log('no strict comparison:',2 != "2");
 
-//NOTE: Strict equality not ont check values but also type of the values
+//NOTE: Strict equality not not only check values but also type of the values
 
 
 
