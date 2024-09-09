@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Element</title>
+</head>
+
+<body>
+  
+</body>
+<!--
+To ensure the document loaded completely, add the script after tha body tag. Got But in document.body so remember this point
+-->
+<script>
+  const div = document.createElement('div');
+  div.setAttribute('style','color:red');
+  div.setAttribute('style','background:grey');
+  div.setAttribute('title','harry Potter');
+
+  div.style.padding='10px';
+  div.style.textAlign='center';
+  div.style.fontSize='20px'
+
+  div.innerHTML= 'Superman'; 
+  // div.innerHTML = 'Spider-Man'; //Overrides previous HTML
+
+  //More optimized method, that does not override previous values, same can be done for more attributes
+  const text = document.createTextNode(' Hulk');
+  div.appendChild(text);
+
+  document.body.appendChild(div);
+  console.log(div);
+  
+</script>
+</html>

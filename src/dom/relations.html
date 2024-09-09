@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div class="parent">
+    <div class="child1">Harry Potter</div>
+    <div class="child2">Superman</div>
+    <div class="child3">Hulk</div>
+    <div class="child4">Thanos</div>
+  </div> -->
+  <div class="parent">
+    <div class="child">Harry Potter</div>
+    <!--Hi Comment-->
+    <div class="child">Superman</div>
+    <div class="child">Hulk</div>
+    <div class="child">Thanos</div>
+  </div>
+</body>
+<script>
+  const parent = document.querySelector('.parent')// NOTE: Returns the parent Object of the class name
+  // console.log('Document is:', document); // Logs the html document
+  console.log('parent:', parent); // Logs parent object
+  console.log('Child Nodes (NodeList[]):', parent.childNodes);
+  
+  /*
+  * Node list have length 11, but there are 4 child elements above only
+  * Node list also counts the line breaks and comments
+   */
+
+  console.log('Children (HTMLCollection[]):', parent.children);// HTMLCollection of all children
+  parent.children[2].innerHTML= 'FLASH';
+  parent.children[0].style.color='blue'  
+  parent.style.padding = '10px';
+  console.log('Elements array:', Array.from(parent.children));// Create array from HTML collection, same can be done for NodeList
+  console.log('First ELEMENT CHILD:', parent.firstElementChild);// logs 1st child
+  console.log('Last ELEMENT CHILD:', parent.lastElementChild);// logs last child
+  const childOne = document.querySelector('.child')// Returns the 1st child, if there are multiple child with same name
+  console.log('1st child from query selector is:', childOne);
+  console.log('Parent from Child is:', childOne.parentElement);
+  console.log('Next Sibling Child:', childOne.nextElementSibling);
+  
+  
+</script>
+</html>
