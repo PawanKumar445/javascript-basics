@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Append Child</title>
+</head>
+<body style="background-color: #212121; color: white;">
+  <div>
+    <ul class="superheros">
+      <li>Batman</li>
+    </ul>
+  </div>
+</body>
+<script>
+
+  /*
+  *innerHTML traverse the whole document tree t append the child
+  *We can dow it in more optimized way
+  */
+  function appendChild(heroParam){
+    const li = document.createElement('li');
+    li.innerHTML=heroParam;
+    document.querySelector('.superheros').appendChild(li);
+  }
+  appendChild('Superman');
+  appendChild('Hulk');
+
+  console.time(' Append Child');
+  for (let index = 0; index < 100000; index++) {
+    optimizedAppendChild(`Hero-${index}`)
+  }
+  console.timeEnd(' Append Child');
+
+  function optimizedAppendChild(heroParam){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(heroParam));
+    document.querySelector('.superheros').appendChild(li);
+  }
+
+  optimizedAppendChild('Spider-Man');
+  console.time('Optimized Append Child');
+  for (let index = 0; index < 100000; index++) {
+    optimizedAppendChild(`Optimized Hero-${index}`)
+  }
+  console.timeEnd('Optimized Append Child');
+</script>
+</html>
