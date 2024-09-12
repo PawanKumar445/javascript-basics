@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events One</title>
+</head>
+<style>
+  .child{
+    width: 20%;
+    padding: 20px 20px;
+    margin: 5px 5px; 
+    cursor: pointer;
+    background-color: brown;
+  }
+
+  .child:hover{
+    background-color: gray;
+  }
+</style>
+<body>
+  <div class="parent-container">
+  <div class="child" id="child1" >DIV-1</div>
+  <div class="child" id="child2" >DIV-2</div>
+  <div class="child" id="child3" >DIV-3</div>
+  <div class="child" id="child4" >DIV-4</div>
+  <div class="child" id="child5" >DIV-5</div>
+  <div class="child" id="child6" >
+    <a href="https://www.google.co.in/" target="_blank">Google...</a>
+  </div>
+  </div>
+</body>
+
+<script>
+  // const div = document.getElementById('child4');
+  // console.log('DIV:', div);
+
+  /*
+  * This method of implementing on click event directly is not recommended as it limits the features
+  */
+  // document.getElementById('child4').onclick=()=>{
+  //   alert('Div 4 Clicked()')
+  // };
+
+  //OLD Methods to add event listeners
+  //attachEvent()
+  //jQuery- on
+  
+  //Recommended Method
+  // document.getElementById('child4').addEventListener('click',(e)=>{
+  //   console.log('Event is*******::::',e);
+  //   alert('DIV4- clicked again!!!');
+  // });
+
+  //EVENT Propagation
+  /*
+  * The third argument 'false' is for event propagation.
+  * By Default, it is false so if not passed in the call, everything works fine
+  * 1.Bubbling 2.Capturing
+  */
+ //Bubbling
+  // document.querySelector('.parent-container').addEventListener('click',(e)=>{
+  //   alert('Parent container For Div');
+  // },false);
+
+  // document.getElementById('child3').addEventListener('click',(e)=>{
+  //   alert('Div3 Clicked');
+  // },false);
+
+  //Capturing
+  // document.querySelector('.parent-container').addEventListener('click',(e)=>{
+  //   alert('Parent container For Div');
+  // },true);
+
+  // document.getElementById('child3').addEventListener('click',(e)=>{
+  //   alert('Div3 Clicked');
+  // },true);
+
+  //Prevent Propagation
+  // document.querySelector('.parent-container').addEventListener('click',(e)=>{
+  //   alert('Parent container For Div');
+  // });
+
+  // document.getElementById('child3').addEventListener('click',(e)=>{
+  //   e.stopPropagation();
+  //   alert('Div3 Clicked');
+  // });
+
+
+  //Default Propagation (Bubbling)
+  document.querySelector('.parent-container').addEventListener('click',(e)=>{
+    alert('Parent container For Div');
+  });
+
+  document.getElementById('child3').addEventListener('click',(e)=>{
+    // e.stopPropagation();
+    alert('Div3 Clicked');
+  });
+
+  //STOP Propagation for a specific div
+   document.getElementById('child6').addEventListener('click',(e)=>{
+    e.stopPropagation();
+    // e.preventDefault(); prevents the default functionality i.e goto the link
+  });
+
+  //Remove the clicked div
+  const div=document.getElementById('child6');
+  div
+  .addEventListener('click',(e)=>{
+    e.stopPropagation();
+    div.remove()
+    // div.removeChild()
+  });
+
+  
+</script>
+</html>
