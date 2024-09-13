@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+table, th, td {
+  border:1px solid black;
+}
+
+td{
+  width: 20%;
+  height: 3vh
+}
+</style>
+<body>
+
+<table style="width:30%">
+  <tr>
+    <th>Key</th>
+    <th>Key Code</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td id="key"></td>
+    <td id="keyCode"></td>
+    <td id="metaKey"></td>
+  </tr>
+</table>
+</body>
+
+<script>
+  document.addEventListener('keydown',(e)=>{
+    document.querySelector('#key').innerHTML = e.key=== ' '?'Space': e.key;
+    document.querySelector('#keyCode').innerHTML = e.keyCode;
+    document.querySelector('#metaKey').innerHTML = e.metaKey;
+
+
+  })
+</script>
+</html>
+
