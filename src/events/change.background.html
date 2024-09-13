@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background</title>
+</head>
+<style>
+  .button-container{
+    height: 30vh;
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+  }
+
+  .button{
+    height: 25%;
+    width: 20%;
+    margin-top: 5%;
+  }
+
+  .button:hover::after{
+    background-color: beige;
+  }
+
+
+</style>
+<body>
+  <div class="button-container">
+    <button class='button' id="start">Start</button>
+    <button class='button' id="stop">Stop</button>
+  </div>
+</body>
+<script>
+  const hexValues = '0123456789ABCDEF';
+
+  const getRandomColorCode = ()=>{
+    let colorCode ='#';
+   for (let index = 0; index < 6; index++) {
+    const randomValue = Math.floor(Math.random()*16);    
+    colorCode+= hexValues[randomValue];
+   }
+   return colorCode;
+  }
+
+  let setIntervalReference = null;
+
+  /**
+   * There is a bug in this code, if user click the start button multiple times then things gets out of control and color changes in unexpected way with flickering effect and stop button does not work (as there will me many setInterval running, every click on start will execute a setInterval)
+   * So we need to check if the setIntervalReference is null then we need to add setInterval
+   * When stop button is clicked, we need to make the setIntervalReference as null
+   * */
+  
+  document.querySelector('#start').addEventListener('click',(e)=>{
+    if(!setIntervalReference){
+      setIntervalReference=setInterval(()=>{
+    const randomColor = getRandomColorCode();
+    document.body.style.backgroundColor=randomColor;
+    },500)
+    }
+  });
+
+  document.querySelector('#stop').addEventListener('click',()=>{
+    clearInterval(setIntervalReference);
+    setIntervalReference=null;
+  })
+
+</script>
+</html>
