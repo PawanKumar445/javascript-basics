@@ -1,4 +1,4 @@
-# Document Object Model
+# DOM-Document Object Model
 * `Javascript representation` of a webpage is know as DOM.
 * DOM can be used to manipulate the web page.
 * DOM have the full access and control of the web page. So anything on the webpage can be accessed and manipulated using DOM object.
