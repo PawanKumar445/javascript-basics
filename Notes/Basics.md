@@ -21,3 +21,35 @@
  * Non Primitive / Reference Types: Array, Objects, Functions
  * Stack Memory: Used By Primitive Types. It if accessed/assigned by copy
  * Heap Memory: Used by Non Primitive Types. It is accessed/assigned by reference
+
+
+ # this keyword
+ * `this` refers to the context where the code executes
+ * If a normal function (anonymous or with function name) is defined in global context the 'this' refers to the global object
+ * If a normal function is defined inside an object, then 'this' refers to thye body of that function
+    ```javascript
+
+    const myData = {
+      name: "Pawan Kumar",
+      myAnonymousFun: function(){
+        console.log(this);
+      },
+    };
+    ```
+ * ~~If arrow functions are defined as callback (not in global scope), then the 'this' keyword within them does not have access to the context~~
+ * Arrow functions inherit this from their parent scope. This makes arrow functions useful in callbacks
+ * For normal functions the value of this depends on how it is invoked
+    ```javascript
+
+    function getThis(){
+      console.log(this)
+      return this;
+    }
+    const obj1={name:'pawan kumar'};
+    const obj2={name:'aman kumar'};
+    obj1.thisRef=getThis;
+    obj2.thisRef = getThis;
+
+    //value of this is different for obj1 and obj2
+    
+    ```

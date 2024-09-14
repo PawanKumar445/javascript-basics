@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>XHR Request</title>
+  </head>
+  <body style="background-color: #212121;">
+    <div id="api_response"></div>
+  </body>
+  <script>
+    const requestUrl = 'https://api.github.com/';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    xhr.onreadystatechange = function (){
+      console.log('Request Stage:', xhr.readyState);
+      console.log('this::', this);
+      if(xhr.readyState===4){
+        const data = JSON.parse(this.responseText)
+        console.log('response:', data);
+        
+      }
+    }
+    xhr.send();
+  </script>
+</html>
