@@ -10,7 +10,11 @@
   * .finally() will be executed every time a promise is consumer (no matter if rejected or fulfilled)
   * The can be written in any order
 * try catch block can be used inside promises, like  `new Promise((res,rej)=>{try{}catch(e){}finally(){}})`
-* promises can use async code like `new Promise(async(res,rej)=>{})`
+* promises can use async code like `new Promise(async(res,rej)=>{})`;
+* Chaining cah be used with promises like `promise().then().then().catch().catch().finally().finally()`
+  * To pass data between .then() blocks, `return` is used
+  * To pass errors between .catch() blocks, `throw` is used
+  * Multiple finally can also be used, but data can not be passed between them
 
 
 

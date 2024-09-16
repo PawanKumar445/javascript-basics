@@ -97,4 +97,8 @@ promiseFive
     throw { error: "I am thrown error 2" };// THROWS error in next catch block
   })
   .catch(err=>{console.log('next error:', err);
+  }).finally((data)=>{
+    console.log('finally1',data);//data is undefined
+    return 9989;
+  }).finally((data)=>{console.log('Finally2',data);//data is undefined
   })

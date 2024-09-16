@@ -70,3 +70,15 @@
     # Datatype Copy
     * `Shallow Copy`:- Both original and copied object share same memory reference. Changes will be reflected on both objects.
     * `Deep Copy`:-  Both original and copied object share separate memory reference. Changes will be reflected on individual object, as each have separate reference
+
+
+    # Objects
+    * To access object keys `?` denotes optional key and if key not found the returns undefined
+    * If tried to access a key that is not present without using `?`, then error will be thrown
+    ```javascript
+    
+    const user = {name:'Pawan Kumar'}
+    console.log('Optional key:',user?.['address']);// will return undefined, but no error will be thrown
+    console.log('Non-Optional key:',user.['address']);// will throw error as address key not found 
+        
+    ```
