@@ -22,3 +22,17 @@ const num= 848728478277939429423094123094094;
 const bigNum = 848728478277939429423094123094094n;
 // console.log('num:',num, 'Big Num:::', bigNum, 'type of big num:', typeof bigNum);// OUTPUT: num: 8.487284782779394e+32 Big Num::: 848728478277939429423094123094094n type of big num: bigint
 
+
+value = 33;
+(function(){
+  console.log('access inside scope:',this.value);//33
+})();
+
+( ()=> {
+  console.log("access inside scope arrow function :", this.value);//undefined because parent `this` is empty
+})();
+console.log('access outside the scope:',this.value);// {}
+console.log('outer this is:', this);//{}
+
+
+

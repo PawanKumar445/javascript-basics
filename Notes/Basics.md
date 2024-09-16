@@ -10,6 +10,19 @@
   * const is used to declare `CONSTANT` values. That we do not want to change
   * let can be re-assigned
 * JavaScript is a dynamic type language and we do not need to define variable types in it.
+* If a variable does is defined without let,const or var, then it becomes the part of global object and can be accessed by this
+  ```javascript
+
+  value =33;
+  function(){
+    console.log(this.value);//33
+  }
+   ()=>{
+    console.log(this.value);//undefined as parent 'this' is empty object
+  }
+  console.log(this.value);// undefined
+
+  ```
 
 
 # Data Types
@@ -53,3 +66,7 @@
     //value of this is different for obj1 and obj2
     
     ```
+
+    # Datatype Copy
+    * `Shallow Copy`:- Both original and copied object share same memory reference. Changes will be reflected on both objects.
+    * `Deep Copy`:-  Both original and copied object share separate memory reference. Changes will be reflected on individual object, as each have separate reference
