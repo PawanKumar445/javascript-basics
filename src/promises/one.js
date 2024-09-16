@@ -67,3 +67,34 @@ promiseFive
   .catch((err) => {
     // console.log("error in promiseFive is:", err);
   });
+
+  //Chaining
+
+  const promiseSix = new Promise(async (resolve, reject) => {
+    try {
+      reject('Network error')
+      let data = await fetch(`https://api.github.com/users`);
+      data = await data.json();
+      resolve(data);
+    } catch (err) {
+      reject(err);
+    }
+  });
+
+  promiseSix
+  .then(data=>{
+    return data[0]
+  })
+  .then(data=>{
+    console.log('User Returned by previous then',data);
+    return {message: 'User Found!!!!'}
+  })
+  .then((data)=>{
+    console.log('Last then:',data);
+  })
+  .catch((err)=>{console.log('error1',err);
+    // return {error: 'I am returned error 2'};// DOES not return error to next catch
+    throw { error: "I am thrown error 2" };// THROWS error in next catch block
+  })
+  .catch(err=>{console.log('next error:', err);
+  })
