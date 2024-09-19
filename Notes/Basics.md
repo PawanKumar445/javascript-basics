@@ -82,3 +82,6 @@
     console.log('Non-Optional key:',user.['address']);// will throw error as address key not found 
         
     ```
+
+    * Javascript is a prototype-based language?? what is prototype based language?
+    * Javascript does not have classes. Under the hood the are prototypes
