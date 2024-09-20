@@ -53,3 +53,7 @@ emp.greet()
 * Parent class can not call child class methods
 
 ### Polymorphism
+
+### Difference between Abstraction and Encapsulation
+* Abstraction hides details at design level while encapsulation hides details at implementation level
+* Abstraction allows to use the methods defined in a class. Encapsulation in concerned with the implementation of those methods

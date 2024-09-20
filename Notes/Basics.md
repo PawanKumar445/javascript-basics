@@ -37,9 +37,11 @@
 
 
  # this keyword
- * `this` refers to the context where the code executes
+ * `this` refers to the context where the code executes or the instance that calls the method
+ * This keyword creates a new instance of object.
+ * It binds the prototypes with the object
  * If a normal function (anonymous or with function name) is defined in global context the 'this' refers to the global object
- * If a normal function is defined inside an object, then 'this' refers to thye body of that function
+ * If a normal function is defined inside an object, then 'this' refers to the body of that function
     ```javascript
 
     const myData = {
