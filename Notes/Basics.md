@@ -2,6 +2,9 @@
 # Default Javascript Features
 * Javascript executes `synchronously`. Some times it is also referred as asynchronous as it can run async code
 * Javascript is a `single threaded` language
+  ```javascript
+  console.log(typeof NaN);//number
+  ```
 
 # Variables
 
