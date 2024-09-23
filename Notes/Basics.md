@@ -35,7 +35,7 @@
  * Primitive Types: String, Number, Boolean, null, undefined, Symbol, BigInt
  *    NOTE: They all holds single value at a time
  * Non Primitive / Reference Types: Array, Objects, Functions
- * Stack Memory: Used By Primitive Types. It if accessed/assigned by copy
+ * Stack Memory: Used By Primitive Types. It is accessed/assigned by copy
  * Heap Memory: Used by Non Primitive Types. It is accessed/assigned by reference
 
 
